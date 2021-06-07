@@ -16,7 +16,7 @@ class WishListStep extends \AcceptanceTester
             $I->waitForElementClickable(sprintf(MainPage::$quickView, $i));
             $I->Click(sprintf(MainPage::$quickView, $i));
             $I->wait(5);
-            $I->click(sprintf(MainPage::$quickView, $i));
+            $I->switchToIFrame(MainPage::$Iframe);
             $I->waitForElementVisible(MainPage::$wishList);
             $I->wait(5);
             $I->click(MainPage::$wishList);
