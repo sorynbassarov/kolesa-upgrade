@@ -2,11 +2,19 @@
 namespace Page\Acceptance;
 
 /**
- * class with elements and methods on MainPage
+ * класс для аккаунта
  */
 class AccountPage
 {
+
+    /**
+     * Наш урл
+     */
     public static $myAccountUrl = '?fc=module&module=blockwishlist&controller=mywishlist';
+
+    /**
+     *  Селектор для вишлиста
+     */
     public static $mywishList = '//*[@class="lnk_wishlist"]';
    
      /**

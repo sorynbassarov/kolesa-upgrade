@@ -6,8 +6,20 @@ namespace Page\Acceptance;
  */
 class WishListPage
 {
+
+    /**
+     * Наш урл
+     */
     public static $wishListUrl = '/index.php?fc=module&module=blockwishlist&controller=mywishlist';
+
+    /**
+     * Селектор для опредения числа товара
+     */
     public static $qty = '//*[@id="wishlist_34127"]/td[2]';
+
+    /**
+     * Селектор для очистки вишлиста
+     */
     public static $delWishlist = '//*[@id="wishlist_34127"]//i[1]';
 
        /**

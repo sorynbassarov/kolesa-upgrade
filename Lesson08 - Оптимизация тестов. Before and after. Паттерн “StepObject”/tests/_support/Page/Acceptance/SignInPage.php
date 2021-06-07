@@ -7,11 +7,35 @@ namespace Page\Acceptance;
 class SignInPage
 {
     public static $url = '';
+
+    /**
+     * локатор для логина
+     */
     public static $login = '//*[@class="login"]';
+
+    /**
+     * текст ALREADY REGISTERED?
+     */
     public static $registeredText = '//*[@id="login_form"]/h3[1]';
+
+    /**
+     *  Вводим емайл
+     */
     public static $email = '//*[@id="email"]';
+
+    /**
+     *  Вводим пароль
+     */
     public static $password = '//*[@id="passwd"]';
+
+    /**
+     *  Подтвержаем выбор 
+     */
     public static $submitLogin = '//*[@id="SubmitLogin"]';
+
+    /**
+     *  Выходим из кабинета
+     */
     public static $signOut = '//*[@class="logout"]';
 
       /**
@@ -27,7 +51,7 @@ class SignInPage
     }
 
      /**
-     * Зайти на на сайт
+     * Метод для захода на сайт 
      */
     public function SignIn(){
         $this->acceptanceTester->fillField(self::$email, '213buter@gmail.com');
@@ -35,7 +59,7 @@ class SignInPage
         $this->acceptanceTester->click(self::$submitLogin);
     }
     /**
-     * выходим из аккаунта
+     * Метода для выхода из сайта
      */
     public function logout(){
         return $this->acceptanceTester->click(self::$signOut);
