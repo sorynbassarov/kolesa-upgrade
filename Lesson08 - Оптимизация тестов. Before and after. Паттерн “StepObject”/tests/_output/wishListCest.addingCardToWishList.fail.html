@@ -1,6 +1,6 @@
 <html lang="en" class=""><head>
 		<meta charset="utf-8">
-		<title>Order - My Store</title>
+		<title>Login - My Store</title>
 		<meta name="generator" content="PrestaShop">
 		<meta name="robots" content="index,follow">
 		<meta name="viewport" content="width=device-width, minimum-scale=0.25, maximum-scale=1.6, initial-scale=1.0"> 
@@ -12,7 +12,7 @@
 			<link rel="stylesheet" href="/themes/default-bootstrap/css/autoload/responsive-tables.css" type="text/css" media="all">
 			<link rel="stylesheet" href="/themes/default-bootstrap/css/autoload/uniform.default.css" type="text/css" media="all">
 			<link rel="stylesheet" href="/js/jquery/plugins/fancybox/jquery.fancybox.css" type="text/css" media="all">
-			<link rel="stylesheet" href="/themes/default-bootstrap/css/addresses.css" type="text/css" media="all">
+			<link rel="stylesheet" href="/themes/default-bootstrap/css/authentication.css" type="text/css" media="all">
 			<link rel="stylesheet" href="/themes/default-bootstrap/css/modules/blockbanner/blockbanner.css" type="text/css" media="all">
 			<link rel="stylesheet" href="/themes/default-bootstrap/css/modules/blockcart/blockcart.css" type="text/css" media="all">
 			<link rel="stylesheet" href="/themes/default-bootstrap/css/modules/blockcategories/blockcategories.css" type="text/css" media="all">
@@ -43,17 +43,16 @@ var baseDir = 'http://automationpractice.com/';
 var baseUri = 'http://automationpractice.com/index.php';
 var blocksearch_type = 'top';
 var contentOnly = false;
-var currencyBlank = 0;
-var currencyFormat = 1;
-var currencyRate = 1;
-var currencySign = '$';
+var countries = {"21":{"id_country":"21","id_lang":"1","name":"United States","id_zone":"2","id_currency":"0","iso_code":"US","call_prefix":"1","active":"1","contains_states":"1","need_identification_number":"0","need_zip_code":"1","zip_code_format":"NNNNN","display_tax_label":"0","country":"United States","zone":"North America","states":[{"id_state":"1","id_country":"21","id_zone":"2","name":"Alabama","iso_code":"AL","tax_behavior":"0","active":"1"},{"id_state":"2","id_country":"21","id_zone":"2","name":"Alaska","iso_code":"AK","tax_behavior":"0","active":"1"},{"id_state":"3","id_country":"21","id_zone":"2","name":"Arizona","iso_code":"AZ","tax_behavior":"0","active":"1"},{"id_state":"4","id_country":"21","id_zone":"2","name":"Arkansas","iso_code":"AR","tax_behavior":"0","active":"1"},{"id_state":"5","id_country":"21","id_zone":"2","name":"California","iso_code":"CA","tax_behavior":"0","active":"1"},{"id_state":"6","id_country":"21","id_zone":"2","name":"Colorado","iso_code":"CO","tax_behavior":"0","active":"1"},{"id_state":"7","id_country":"21","id_zone":"2","name":"Connecticut","iso_code":"CT","tax_behavior":"0","active":"1"},{"id_state":"8","id_country":"21","id_zone":"2","name":"Delaware","iso_code":"DE","tax_behavior":"0","active":"1"},{"id_state":"53","id_country":"21","id_zone":"2","name":"District of Columbia","iso_code":"DC","tax_behavior":"0","active":"1"},{"id_state":"9","id_country":"21","id_zone":"2","name":"Florida","iso_code":"FL","tax_behavior":"0","active":"1"},{"id_state":"10","id_country":"21","id_zone":"2","name":"Georgia","iso_code":"GA","tax_behavior":"0","active":"1"},{"id_state":"11","id_country":"21","id_zone":"2","name":"Hawaii","iso_code":"HI","tax_behavior":"0","active":"1"},{"id_state":"12","id_country":"21","id_zone":"2","name":"Idaho","iso_code":"ID","tax_behavior":"0","active":"1"},{"id_state":"13","id_country":"21","id_zone":"2","name":"Illinois","iso_code":"IL","tax_behavior":"0","active":"1"},{"id_state":"14","id_country":"21","id_zone":"2","name":"Indiana","iso_code":"IN","tax_behavior":"0","active":"1"},{"id_state":"15","id_country":"21","id_zone":"2","name":"Iowa","iso_code":"IA","tax_behavior":"0","active":"1"},{"id_state":"16","id_country":"21","id_zone":"2","name":"Kansas","iso_code":"KS","tax_behavior":"0","active":"1"},{"id_state":"17","id_country":"21","id_zone":"2","name":"Kentucky","iso_code":"KY","tax_behavior":"0","active":"1"},{"id_state":"18","id_country":"21","id_zone":"2","name":"Louisiana","iso_code":"LA","tax_behavior":"0","active":"1"},{"id_state":"19","id_country":"21","id_zone":"2","name":"Maine","iso_code":"ME","tax_behavior":"0","active":"1"},{"id_state":"20","id_country":"21","id_zone":"2","name":"Maryland","iso_code":"MD","tax_behavior":"0","active":"1"},{"id_state":"21","id_country":"21","id_zone":"2","name":"Massachusetts","iso_code":"MA","tax_behavior":"0","active":"1"},{"id_state":"22","id_country":"21","id_zone":"2","name":"Michigan","iso_code":"MI","tax_behavior":"0","active":"1"},{"id_state":"23","id_country":"21","id_zone":"2","name":"Minnesota","iso_code":"MN","tax_behavior":"0","active":"1"},{"id_state":"24","id_country":"21","id_zone":"2","name":"Mississippi","iso_code":"MS","tax_behavior":"0","active":"1"},{"id_state":"25","id_country":"21","id_zone":"2","name":"Missouri","iso_code":"MO","tax_behavior":"0","active":"1"},{"id_state":"26","id_country":"21","id_zone":"2","name":"Montana","iso_code":"MT","tax_behavior":"0","active":"1"},{"id_state":"27","id_country":"21","id_zone":"2","name":"Nebraska","iso_code":"NE","tax_behavior":"0","active":"1"},{"id_state":"28","id_country":"21","id_zone":"2","name":"Nevada","iso_code":"NV","tax_behavior":"0","active":"1"},{"id_state":"29","id_country":"21","id_zone":"2","name":"New Hampshire","iso_code":"NH","tax_behavior":"0","active":"1"},{"id_state":"30","id_country":"21","id_zone":"2","name":"New Jersey","iso_code":"NJ","tax_behavior":"0","active":"1"},{"id_state":"31","id_country":"21","id_zone":"2","name":"New Mexico","iso_code":"NM","tax_behavior":"0","active":"1"},{"id_state":"32","id_country":"21","id_zone":"2","name":"New York","iso_code":"NY","tax_behavior":"0","active":"1"},{"id_state":"33","id_country":"21","id_zone":"2","name":"North Carolina","iso_code":"NC","tax_behavior":"0","active":"1"},{"id_state":"34","id_country":"21","id_zone":"2","name":"North Dakota","iso_code":"ND","tax_behavior":"0","active":"1"},{"id_state":"35","id_country":"21","id_zone":"2","name":"Ohio","iso_code":"OH","tax_behavior":"0","active":"1"},{"id_state":"36","id_country":"21","id_zone":"2","name":"Oklahoma","iso_code":"OK","tax_behavior":"0","active":"1"},{"id_state":"37","id_country":"21","id_zone":"2","name":"Oregon","iso_code":"OR","tax_behavior":"0","active":"1"},{"id_state":"38","id_country":"21","id_zone":"2","name":"Pennsylvania","iso_code":"PA","tax_behavior":"0","active":"1"},{"id_state":"51","id_country":"21","id_zone":"2","name":"Puerto Rico","iso_code":"PR","tax_behavior":"0","active":"1"},{"id_state":"39","id_country":"21","id_zone":"2","name":"Rhode Island","iso_code":"RI","tax_behavior":"0","active":"1"},{"id_state":"40","id_country":"21","id_zone":"2","name":"South Carolina","iso_code":"SC","tax_behavior":"0","active":"1"},{"id_state":"41","id_country":"21","id_zone":"2","name":"South Dakota","iso_code":"SD","tax_behavior":"0","active":"1"},{"id_state":"42","id_country":"21","id_zone":"2","name":"Tennessee","iso_code":"TN","tax_behavior":"0","active":"1"},{"id_state":"43","id_country":"21","id_zone":"2","name":"Texas","iso_code":"TX","tax_behavior":"0","active":"1"},{"id_state":"52","id_country":"21","id_zone":"2","name":"US Virgin Islands","iso_code":"VI","tax_behavior":"0","active":"1"},{"id_state":"44","id_country":"21","id_zone":"2","name":"Utah","iso_code":"UT","tax_behavior":"0","active":"1"},{"id_state":"45","id_country":"21","id_zone":"2","name":"Vermont","iso_code":"VT","tax_behavior":"0","active":"1"},{"id_state":"46","id_country":"21","id_zone":"2","name":"Virginia","iso_code":"VA","tax_behavior":"0","active":"1"},{"id_state":"47","id_country":"21","id_zone":"2","name":"Washington","iso_code":"WA","tax_behavior":"0","active":"1"},{"id_state":"48","id_country":"21","id_zone":"2","name":"West Virginia","iso_code":"WV","tax_behavior":"0","active":"1"},{"id_state":"49","id_country":"21","id_zone":"2","name":"Wisconsin","iso_code":"WI","tax_behavior":"0","active":"1"},{"id_state":"50","id_country":"21","id_zone":"2","name":"Wyoming","iso_code":"WY","tax_behavior":"0","active":"1"}]}};
 var customizationIdMessage = 'Customization #';
 var delete_txt = 'Delete';
-var deliveryAddress = 0;
 var displayList = false;
+var email_create = false;
 var freeProductTranslation = 'Free!';
 var freeShippingTranslation = 'Free shipping!';
-var generated_date = 1623037595;
+var generated_date = 1623040439;
+var idSelectedCountry = false;
+var idSelectedState = false;
 var id_lang = 1;
 var img_dir = 'http://automationpractice.com/themes/default-bootstrap/img/';
 var instantsearch = false;
@@ -61,7 +60,7 @@ var isGuest = 0;
 var isLogged = 0;
 var loggin_required = 'You must be logged in to manage your wishlist.';
 var mywishlist_url = 'http://automationpractice.com/index.php?fc=module&module=blockwishlist&controller=mywishlist';
-var page_name = 'order';
+var page_name = 'authentication';
 var placeholder_blocknewsletter = 'Enter your e-mail';
 var priceDisplayMethod = 1;
 var priceDisplayPrecision = 2;
@@ -71,8 +70,6 @@ var roundMode = 2;
 var search_url = 'http://automationpractice.com/index.php?controller=search';
 var static_token = 'e817bb0705dd58da8db074c69f729fd8';
 var token = 'ce65cefcbafad255f0866d3b32d32058';
-var txtProduct = 'Product';
-var txtProducts = 'Products';
 var usingSecureMode = false;
 var wishlistProductsIds = false;
 </script>
@@ -88,7 +85,10 @@ var wishlistProductsIds = false;
 		<script type="text/javascript" src="/js/jquery/plugins/fancybox/jquery.fancybox.js"></script>
 		<script type="text/javascript" src="/themes/default-bootstrap/js/products-comparison.js"></script>
 		<script type="text/javascript" src="/js/jquery/plugins/jquery.typewatch.js"></script>
-		<script type="text/javascript" src="/themes/default-bootstrap/js/cart-summary.js"></script>
+		<script type="text/javascript" src="/themes/default-bootstrap/js/tools/vatManagement.js"></script>
+		<script type="text/javascript" src="/themes/default-bootstrap/js/tools/statesManagement.js"></script>
+		<script type="text/javascript" src="/themes/default-bootstrap/js/authentication.js"></script>
+		<script type="text/javascript" src="/js/validate.js"></script>
 		<script type="text/javascript" src="/themes/default-bootstrap/js/modules/blockcart/ajax-cart.js"></script>
 		<script type="text/javascript" src="/js/jquery/plugins/jquery.scrollTo.js"></script>
 		<script type="text/javascript" src="/js/jquery/plugins/jquery.serialScroll.js"></script>
@@ -108,7 +108,7 @@ var wishlistProductsIds = false;
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 		<![endif]-->
 	<style type="text/css">.fancybox-margin{margin-right:17px;}</style></head>
-	<body id="order" class="order hide-left-column hide-right-column lang_en" style="">
+	<body id="authentication" class="authentication hide-left-column hide-right-column lang_en" style="">
 					<div id="page">
 			<div class="header-container">
 				<header id="header">
@@ -169,88 +169,31 @@ var wishlistProductsIds = false;
 	<div class="shopping_cart">
 		<a href="http://automationpractice.com/index.php?controller=order" title="View my shopping cart" rel="nofollow">
 			<b>Cart</b>
-			<span class="ajax_cart_quantity">3</span>
+			<span class="ajax_cart_quantity unvisible">0</span>
 			<span class="ajax_cart_product_txt unvisible">Product</span>
-			<span class="ajax_cart_product_txt_s">Products</span>
-			<span class="ajax_cart_total">
-																					$105.97
-												</span>
-			<span class="ajax_cart_no_product unvisible">(empty)</span>
+			<span class="ajax_cart_product_txt_s unvisible">Products</span>
+			<span class="ajax_cart_total unvisible">
+							</span>
+			<span class="ajax_cart_no_product">(empty)</span>
 					</a>
 					<div class="cart_block block exclusive">
 				<div class="block_content">
 					<!-- block list of products -->
 					<div class="cart_block_list">
-													<dl class="products">
-																																			<dt data-id="cart_block_product_3_13_0" class="first_item">
-										<a class="cart-images" href="http://automationpractice.com/index.php?id_product=3&amp;controller=product" title="Printed Dress"><img src="http://automationpractice.com/img/p/8/8-cart_default.jpg" alt="Printed Dress"></a>
-										<div class="cart-info">
-											<div class="product-name">
-												<span class="quantity-formated"><span class="quantity">1</span>&nbsp;x&nbsp;</span><a class="cart_block_product_name" href="http://automationpractice.com/index.php?id_product=3&amp;controller=product#/size-s/color-orange" title="Printed Dress">Printed Dress</a>
-											</div>
-																							<div class="product-atributes">
-													<a href="http://automationpractice.com/index.php?id_product=3&amp;controller=product#/size-s/color-orange" title="Product detail">Orange, S</a>
-												</div>
-																						<span class="price">
-																									$26.00																							</span>
-										</div>
-										<span class="remove_link">
-																							<a class="ajax_cart_block_remove_link" href="http://automationpractice.com/index.php?controller=cart&amp;delete%3D1%26id_product%3D%7B%24product_id_product%7D%26ipa%3D%7B%24product_id_product_attribute%7D%26id_address_delivery%3D%7B%24product_id_address_delivery%7D%26token%3D%7B%24static_token%7D=" rel="nofollow" title="remove this product from my cart">&nbsp;</a>
-																					</span>
-									</dt>
-																			<dd data-id="cart_block_combination_of_3_13_0" class="first_item">
-																		<!-- Customizable datas -->
-																		</dd>																																			<dt data-id="cart_block_product_4_16_0" class="item">
-										<a class="cart-images" href="http://automationpractice.com/index.php?id_product=4&amp;controller=product" title="Printed Dress"><img src="http://automationpractice.com/img/p/1/0/10-cart_default.jpg" alt="Printed Dress"></a>
-										<div class="cart-info">
-											<div class="product-name">
-												<span class="quantity-formated"><span class="quantity">1</span>&nbsp;x&nbsp;</span><a class="cart_block_product_name" href="http://automationpractice.com/index.php?id_product=4&amp;controller=product#/size-s/color-beige" title="Printed Dress">Printed Dress</a>
-											</div>
-																							<div class="product-atributes">
-													<a href="http://automationpractice.com/index.php?id_product=4&amp;controller=product#/size-s/color-beige" title="Product detail">Beige, S</a>
-												</div>
-																						<span class="price">
-																									$50.99																							</span>
-										</div>
-										<span class="remove_link">
-																							<a class="ajax_cart_block_remove_link" href="http://automationpractice.com/index.php?controller=cart&amp;delete%3D1%26id_product%3D%7B%24product_id_product%7D%26ipa%3D%7B%24product_id_product_attribute%7D%26id_address_delivery%3D%7B%24product_id_address_delivery%7D%26token%3D%7B%24static_token%7D=" rel="nofollow" title="remove this product from my cart">&nbsp;</a>
-																					</span>
-									</dt>
-																			<dd data-id="cart_block_combination_of_4_16_0" class="item">
-																		<!-- Customizable datas -->
-																		</dd>																																			<dt data-id="cart_block_product_5_19_0" class="last_item">
-										<a class="cart-images" href="http://automationpractice.com/index.php?id_product=5&amp;controller=product" title="Printed Summer Dress"><img src="http://automationpractice.com/img/p/1/2/12-cart_default.jpg" alt="Printed Summer Dress"></a>
-										<div class="cart-info">
-											<div class="product-name">
-												<span class="quantity-formated"><span class="quantity">1</span>&nbsp;x&nbsp;</span><a class="cart_block_product_name" href="http://automationpractice.com/index.php?id_product=5&amp;controller=product#/size-s/color-yellow" title="Printed Summer Dress">Printed...</a>
-											</div>
-																							<div class="product-atributes">
-													<a href="http://automationpractice.com/index.php?id_product=5&amp;controller=product#/size-s/color-yellow" title="Product detail">Yellow, S</a>
-												</div>
-																						<span class="price">
-																									$28.98																							</span>
-										</div>
-										<span class="remove_link">
-																							<a class="ajax_cart_block_remove_link" href="http://automationpractice.com/index.php?controller=cart&amp;delete%3D1%26id_product%3D%7B%24product_id_product%7D%26ipa%3D%7B%24product_id_product_attribute%7D%26id_address_delivery%3D%7B%24product_id_address_delivery%7D%26token%3D%7B%24static_token%7D=" rel="nofollow" title="remove this product from my cart">&nbsp;</a>
-																					</span>
-									</dt>
-																			<dd data-id="cart_block_combination_of_5_19_0" class="last_item">
-																		<!-- Customizable datas -->
-																		</dd>															</dl>
-												<p class="cart_block_no_products unvisible">
+												<p class="cart_block_no_products">
 							No products
 						</p>
 												<div class="cart-prices">
 							<div class="cart-prices-line first-line">
 								<span class="price cart_block_shipping_cost ajax_cart_shipping_cost">
-																			$2.00
+																			Free shipping!
 																	</span>
 								<span>
 									Shipping
 								</span>
 							</div>
 																					<div class="cart-prices-line last-line">
-								<span class="price cart_block_total ajax_block_cart_total">$107.97</span>
+								<span class="price cart_block_total ajax_block_cart_total">$0.00</span>
 								<span>Total</span>
 							</div>
 													</div>
@@ -292,11 +235,11 @@ var wishlistProductsIds = false;
 			<div class="layer_cart_cart col-xs-12 col-md-6">
 				<h2>
 					<!-- Plural Case [both cases are needed because page may be updated in Javascript] -->
-					<span class="ajax_cart_product_txt_s ">
-						There are <span class="ajax_cart_quantity">3</span> items in your cart.
+					<span class="ajax_cart_product_txt_s  unvisible">
+						There are <span class="ajax_cart_quantity">0</span> items in your cart.
 					</span>
 					<!-- Singular Case [both cases are needed because page may be updated in Javascript] -->
-					<span class="ajax_cart_product_txt  unvisible">
+					<span class="ajax_cart_product_txt ">
 						There is 1 item in your cart.
 					</span>
 				</h2>
@@ -306,7 +249,6 @@ var wishlistProductsIds = false;
 						Total products
 											</strong>
 					<span class="ajax_block_products_total">
-													$105.97
 											</span>
 				</div>
 	
@@ -314,7 +256,7 @@ var wishlistProductsIds = false;
 					<strong class="dark">
 						Total shipping&nbsp;					</strong>
 					<span class="ajax_cart_shipping_cost">
-													$2.00
+													Free shipping!
 											</span>
 				</div>
 								<div class="layer_cart_row">	
@@ -322,8 +264,7 @@ var wishlistProductsIds = false;
 						Total
 											</strong>
 					<span class="ajax_block_cart_total">
-																					$107.97
-																		</span>
+											</span>
 				</div>
 				<div class="button-container">	
 					<span class="continue btn btn-default button exclusive-medium" title="Continue shopping">
@@ -363,7 +304,7 @@ var wishlistProductsIds = false;
 <div class="breadcrumb clearfix">
 	<a class="home" href="http://automationpractice.com/" title="Return to Home"><i class="icon-home"></i></a>
 			<span class="navigation-pipe">&gt;</span>
-					<span class="navigation_page">Your shopping cart</span>
+					<span class="navigation_page">	Authentication</span>
 			</div>
 <!-- /Breadcrumb -->
 										<div id="slider_row" class="row">
@@ -371,259 +312,59 @@ var wishlistProductsIds = false;
 					</div>
 					<div class="row">
 																		<div id="center_column" class="center_column col-xs-12 col-sm-12">
-	
-
-<h1 id="cart_title" class="page-heading">Shopping-cart summary
-			<span class="heading-counter">Your shopping cart contains:
-			<span id="summary_products_quantity">3 Products</span>
-		</span>
-	</h1>
+	<h1 class="page-heading">Authentication</h1>
 
 
-
-
-
-
-<!-- Steps -->
-<ul class="step clearfix" id="order_step">
-	<li class="step_current  first">
-					<span><em>01.</em> Summary</span>
-			</li>
-	<li class="step_todo second">
-					<span><em>02.</em> Sign in</span>
-			</li>
-	<li class="step_todo third">
-					<span><em>03.</em> Address</span>
-			</li>
-	<li class="step_todo four">
-					<span><em>04.</em> Shipping</span>
-			</li>
-	<li id="step_end" class="step_todo last">
-		<span><em>05.</em> Payment</span>
-	</li>
-</ul>
-<!-- /Steps -->
-
-
-
-
-	<p style="display:none" id="emptyCartWarning" class="alert alert-warning">Your shopping cart is empty.</p>
-			<div class="cart_last_product">
-			<div class="cart_last_product_header">
-				<div class="left">Last product added</div>
-			</div>
-			<a class="cart_last_product_img" href="http://automationpractice.com/index.php?id_product=5&amp;controller=product">
-				<img src="http://automationpractice.com/img/p/1/2/12-small_default.jpg" alt="Printed Summer Dress">
-			</a>
-			<div class="cart_last_product_content">
-				<p class="product-name">
-					<a href="http://automationpractice.com/index.php?id_product=5&amp;controller=product#/size-s/color-yellow">
-						Printed Summer Dress
-					</a>
-				</p>
-									<small>
-						<a href="http://automationpractice.com/index.php?id_product=5&amp;controller=product#/size-s/color-yellow">
-							Color : Yellow, Size : S
-						</a>
-					</small>
-							</div>
+	<!---->
+	<div class="row">
+		<div class="col-xs-12 col-sm-6">
+			<form action="http://automationpractice.com/index.php?controller=authentication" method="post" id="create-account_form" class="box">
+				<h3 class="page-subheading">Create an account</h3>
+				<div class="form_content clearfix">
+					<p>Please enter your email address to create an account.</p>
+					<div class="alert alert-danger" id="create_account_error" style="display:none"></div>
+					<div class="form-group">
+						<label for="email_create">Email address</label>
+						<input type="text" class="is_required validate account_input form-control" data-validate="isEmail" id="email_create" name="email_create" value="">
+					</div>
+					<div class="submit">
+						<input type="hidden" class="hidden" name="back" value="my-account">						<button class="btn btn-default button button-medium exclusive" type="submit" id="SubmitCreate" name="SubmitCreate">
+							<span>
+								<i class="icon-user left"></i>
+								Create an account
+							</span>
+						</button>
+						<input type="hidden" class="hidden" name="SubmitCreate" value="Create an account">
+					</div>
+				</div>
+			</form>
 		</div>
-					
-	
-	<div id="order-detail-content" class="table_block table-responsive">
-		<table id="cart_summary" class="table table-bordered stock-management-on">
-			<thead>
-				<tr>
-					<th class="cart_product first_item">Product</th>
-					<th class="cart_description item">Description</th>
-																	<th class="cart_avail item">Avail.</th>
-										<th class="cart_unit item">Unit price</th>
-					<th class="cart_quantity item">Qty</th>
-					<th class="cart_total item">Total</th>
-					<th class="cart_delete last_item">&nbsp;</th>
-				</tr>
-			</thead>
-			<tfoot>
-															<tr class="cart_total_price">
-							<td rowspan="5" colspan="3" id="cart_voucher" class="cart_voucher">
-															</td>
-							<td colspan="3" class="text-right">Total products</td>
-							<td colspan="2" class="price" id="total_product">$105.97</td>
-						</tr>
-													<tr style="display: none;">
-					<td colspan="3" class="text-right">
-													Total gift-wrapping cost:											</td>
-					<td colspan="2" class="price-discount price" id="total_wrapping">
-																					$0.00
-																		</td>
-				</tr>
-															<tr class="cart_total_delivery">
-							<td colspan="3" class="text-right">Total shipping</td>
-							<td colspan="2" class="price" id="total_shipping">$2.00</td>
-						</tr>
-													<tr class="cart_total_voucher" style="display:none">
-					<td colspan="3" class="text-right">
-													Total vouchers
-											</td>
-					<td colspan="2" class="price-discount price" id="total_discount">
-																									$0.00
-					</td>
-				</tr>
-									<tr class="cart_total_price">
-						<td colspan="3" class="text-right">Total</td>
-						<td colspan="2" class="price" id="total_price_without_tax">$107.97</td>
-					</tr>
-					<tr class="cart_total_tax">
-						<td colspan="3" class="text-right">Tax</td>
-						<td colspan="2" class="price" id="total_tax">$0.00</td>
-					</tr>
-								<tr class="cart_total_price">
-					<td colspan="3" class="total_price_container text-right">
-						<span>Total</span>
-					</td>
-											<td colspan="2" class="price" id="total_price_container">
-							<span id="total_price">$107.97</span>
-						</td>
-									</tr>
-			</tfoot>
-			<tbody>
-																																																										
-					<tr id="product_3_13_0_0" class="cart_item first_item address_0 odd">
-	<td class="cart_product">
-		<a href="http://automationpractice.com/index.php?id_product=3&amp;controller=product#/size-s/color-orange"><img src="http://automationpractice.com/img/p/8/8-small_default.jpg" alt="Printed Dress" width="98" height="98"></a>
-	</td>
-	<td class="cart_description">
-		<p class="product-name"><a href="http://automationpractice.com/index.php?id_product=3&amp;controller=product#/size-s/color-orange">Printed Dress</a></p>
-        <small class="cart_ref">SKU : demo_3</small>		<small><a href="http://automationpractice.com/index.php?id_product=3&amp;controller=product#/size-s/color-orange">Color : Orange, Size : S</a></small>	</td>
-			<td class="cart_avail"><span class="label label-success">In stock</span></td>
-		<td class="cart_unit" data-title="Unit price">
-		<span class="price" id="product_price_3_13_0">
-			            	               	 	<span class="price">$26.00</span>
-													</span>
-	</td>
-
-	<td class="cart_quantity text-center">
-								
-				<input type="hidden" value="1" name="quantity_3_13_0_0_hidden">
-				<input size="2" type="text" autocomplete="off" class="cart_quantity_input form-control grey" value="1" name="quantity_3_13_0_0">
-				<div class="cart_quantity_button clearfix">
-									<a rel="nofollow" class="cart_quantity_down btn btn-default button-minus" id="cart_quantity_down_3_13_0_0" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=3&amp;ipa=13&amp;id_address_delivery=0&amp;op=down&amp;token=e817bb0705dd58da8db074c69f729fd8" title="Subtract">
-				<span><i class="icon-minus"></i></span>
-				</a>
-				                	<a rel="nofollow" class="cart_quantity_up btn btn-default button-plus" id="cart_quantity_up_3_13_0_0" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=3&amp;ipa=13&amp;id_address_delivery=0&amp;token=e817bb0705dd58da8db074c69f729fd8" title="Add"><span><i class="icon-plus"></i></span></a>
+		<div class="col-xs-12 col-sm-6">
+			<form action="http://automationpractice.com/index.php?controller=authentication" method="post" id="login_form" class="box">
+				<h3 class="page-subheading">Already registered?</h3>
+				<div class="form_content clearfix">
+					<div class="form-group">
+						<label for="email">Email address</label>
+						<input class="is_required validate account_input form-control" data-validate="isEmail" type="text" id="email" name="email" value="">
+					</div>
+					<div class="form-group">
+						<label for="passwd">Password</label>
+						<span><input class="is_required validate account_input form-control" type="password" data-validate="isPasswd" id="passwd" name="passwd" value=""></span>
+					</div>
+					<p class="lost_password form-group"><a href="http://automationpractice.com/index.php?controller=password" title="Recover your forgotten password" rel="nofollow">Forgot your password?</a></p>
+					<p class="submit">
+						<input type="hidden" class="hidden" name="back" value="my-account">						<button type="submit" id="SubmitLogin" name="SubmitLogin" class="button btn btn-default button-medium">
+							<span>
+								<i class="icon-lock left"></i>
+								Sign in
+							</span>
+						</button>
+					</p>
 				</div>
-						</td>
-	<td class="cart_total" data-title="Total">
-		<span class="price" id="total_product_price_3_13_0">
-												$26.00									</span>
-	</td>
-			<td class="cart_delete text-center" data-title="Delete">
-					<div>
-				<a rel="nofollow" title="Delete" class="cart_quantity_delete" id="3_13_0_0" href="http://automationpractice.com/index.php?controller=cart&amp;delete=1&amp;id_product=3&amp;ipa=13&amp;id_address_delivery=0&amp;token=e817bb0705dd58da8db074c69f729fd8"><i class="icon-trash"></i></a>
-			</div>
-				</td>
-	</tr>
-
-					
-																																																							
-					<tr id="product_4_16_0_0" class="cart_item address_0 even">
-	<td class="cart_product">
-		<a href="http://automationpractice.com/index.php?id_product=4&amp;controller=product#/size-s/color-beige"><img src="http://automationpractice.com/img/p/1/0/10-small_default.jpg" alt="Printed Dress" width="98" height="98"></a>
-	</td>
-	<td class="cart_description">
-		<p class="product-name"><a href="http://automationpractice.com/index.php?id_product=4&amp;controller=product#/size-s/color-beige">Printed Dress</a></p>
-        <small class="cart_ref">SKU : demo_4</small>		<small><a href="http://automationpractice.com/index.php?id_product=4&amp;controller=product#/size-s/color-beige">Color : Beige, Size : S</a></small>	</td>
-			<td class="cart_avail"><span class="label label-success">In stock</span></td>
-		<td class="cart_unit" data-title="Unit price">
-		<span class="price" id="product_price_4_16_0">
-			            	               	 	<span class="price">$50.99</span>
-													</span>
-	</td>
-
-	<td class="cart_quantity text-center">
-								
-				<input type="hidden" value="1" name="quantity_4_16_0_0_hidden">
-				<input size="2" type="text" autocomplete="off" class="cart_quantity_input form-control grey" value="1" name="quantity_4_16_0_0">
-				<div class="cart_quantity_button clearfix">
-									<a rel="nofollow" class="cart_quantity_down btn btn-default button-minus" id="cart_quantity_down_4_16_0_0" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=4&amp;ipa=16&amp;id_address_delivery=0&amp;op=down&amp;token=e817bb0705dd58da8db074c69f729fd8" title="Subtract">
-				<span><i class="icon-minus"></i></span>
-				</a>
-				                	<a rel="nofollow" class="cart_quantity_up btn btn-default button-plus" id="cart_quantity_up_4_16_0_0" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=4&amp;ipa=16&amp;id_address_delivery=0&amp;token=e817bb0705dd58da8db074c69f729fd8" title="Add"><span><i class="icon-plus"></i></span></a>
-				</div>
-						</td>
-	<td class="cart_total" data-title="Total">
-		<span class="price" id="total_product_price_4_16_0">
-												$50.99									</span>
-	</td>
-			<td class="cart_delete text-center" data-title="Delete">
-					<div>
-				<a rel="nofollow" title="Delete" class="cart_quantity_delete" id="4_16_0_0" href="http://automationpractice.com/index.php?controller=cart&amp;delete=1&amp;id_product=4&amp;ipa=16&amp;id_address_delivery=0&amp;token=e817bb0705dd58da8db074c69f729fd8"><i class="icon-trash"></i></a>
-			</div>
-				</td>
-	</tr>
-
-					
-																																																							
-					<tr id="product_5_19_0_0" class="cart_item last_item address_0 odd">
-	<td class="cart_product">
-		<a href="http://automationpractice.com/index.php?id_product=5&amp;controller=product#/size-s/color-yellow"><img src="http://automationpractice.com/img/p/1/2/12-small_default.jpg" alt="Printed Summer Dress" width="98" height="98"></a>
-	</td>
-	<td class="cart_description">
-		<p class="product-name"><a href="http://automationpractice.com/index.php?id_product=5&amp;controller=product#/size-s/color-yellow">Printed Summer Dress</a></p>
-        <small class="cart_ref">SKU : demo_5</small>		<small><a href="http://automationpractice.com/index.php?id_product=5&amp;controller=product#/size-s/color-yellow">Color : Yellow, Size : S</a></small>	</td>
-			<td class="cart_avail"><span class="label label-success">In stock</span></td>
-		<td class="cart_unit" data-title="Unit price">
-		<span class="price" id="product_price_5_19_0">
-			            	               	 	<span class="price special-price">$28.98</span>
-								                	<span class="price-percent-reduction small">
-            										                    			                    			                    																					&nbsp;-5%&nbsp;
-						                    </span>
-					<span class="old-price">$30.51</span>
-									</span>
-	</td>
-
-	<td class="cart_quantity text-center">
-								
-				<input type="hidden" value="1" name="quantity_5_19_0_0_hidden">
-				<input size="2" type="text" autocomplete="off" class="cart_quantity_input form-control grey" value="1" name="quantity_5_19_0_0">
-				<div class="cart_quantity_button clearfix">
-									<a rel="nofollow" class="cart_quantity_down btn btn-default button-minus" id="cart_quantity_down_5_19_0_0" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=5&amp;ipa=19&amp;id_address_delivery=0&amp;op=down&amp;token=e817bb0705dd58da8db074c69f729fd8" title="Subtract">
-				<span><i class="icon-minus"></i></span>
-				</a>
-				                	<a rel="nofollow" class="cart_quantity_up btn btn-default button-plus" id="cart_quantity_up_5_19_0_0" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=5&amp;ipa=19&amp;id_address_delivery=0&amp;token=e817bb0705dd58da8db074c69f729fd8" title="Add"><span><i class="icon-plus"></i></span></a>
-				</div>
-						</td>
-	<td class="cart_total" data-title="Total">
-		<span class="price" id="total_product_price_5_19_0">
-												$28.98									</span>
-	</td>
-			<td class="cart_delete text-center" data-title="Delete">
-					<div>
-				<a rel="nofollow" title="Delete" class="cart_quantity_delete" id="5_19_0_0" href="http://automationpractice.com/index.php?controller=cart&amp;delete=1&amp;id_product=5&amp;ipa=19&amp;id_address_delivery=0&amp;token=e817bb0705dd58da8db074c69f729fd8"><i class="icon-trash"></i></a>
-			</div>
-				</td>
-	</tr>
-
-					
-																				</tbody>
-					</table>
-	</div> <!-- end order-detail-content -->
-
-	
-	
-	
-																								
-		<div id="HOOK_SHOPPING_CART"></div>
-	<p class="cart_navigation clearfix">
-					<a href="http://automationpractice.com/index.php?controller=order&amp;step=1" class="button btn btn-default standard-checkout button-medium" title="Proceed to checkout" style="">
-				<span>Proceed to checkout<i class="icon-chevron-right right"></i></span>
-			</a>
-				<a href="http://automationpractice.com/index.php?id_category=8&amp;controller=category" class="button-exclusive btn btn-default" title="Continue shopping">
-			<i class="icon-chevron-left"></i>Continue shopping
-		</a>
-	</p>
-	
-					</div><!-- #center_column -->
+			</form>
+		</div>
+	</div>
+						</div><!-- #center_column -->
 										</div><!-- .row -->
 				</div><!-- #columns -->
 			</div><!-- .columns-container -->

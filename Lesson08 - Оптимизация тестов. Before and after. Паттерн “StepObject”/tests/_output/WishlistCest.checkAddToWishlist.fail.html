@@ -34,7 +34,7 @@
 			<link rel="stylesheet" href="/modules/editorial/css/editorial.css" type="text/css" media="all">
 			<link rel="stylesheet" href="/themes/default-bootstrap/css/modules/blocktopmenu/css/blocktopmenu.css" type="text/css" media="all">
 			<link rel="stylesheet" href="/themes/default-bootstrap/css/modules/blocktopmenu/css/superfish-modified.css" type="text/css" media="all">
-		<script src="https://connect.facebook.net/en_US/all.js?hash=64b733c6530272562425c5311f8d7237&amp;ua=modern_es6" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="//connect.facebook.net/en_US/all.js#xfbml=1&amp;appId=334341610034299"></script><script type="text/javascript">
+		<script src="https://connect.facebook.net/en_US/all.js?hash=ca89e29e868d363c199215aeb880bd94&amp;ua=modern_es6" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="//connect.facebook.net/en_US/all.js#xfbml=1&amp;appId=334341610034299"></script><script type="text/javascript">
 var CUSTOMIZE_TEXTFIELD = 1;
 var FancyboxI18nClose = 'Close';
 var FancyboxI18nNext = 'Next';
@@ -45,13 +45,15 @@ var ajaxsearch = true;
 var baseDir = 'http://automationpractice.com/';
 var baseUri = 'http://automationpractice.com/index.php';
 var blocksearch_type = 'top';
+var comparator_max_item = 3;
+var comparedProductsIds = [];
 var contentOnly = false;
 var customizationIdMessage = 'Customization #';
 var delete_txt = 'Delete';
 var displayList = false;
 var freeProductTranslation = 'Free!';
 var freeShippingTranslation = 'Free shipping!';
-var generated_date = 1623035516;
+var generated_date = 1623045968;
 var homeslider_loop = 1;
 var homeslider_pause = 3000;
 var homeslider_speed = 500;
@@ -60,8 +62,10 @@ var id_lang = 1;
 var img_dir = 'http://automationpractice.com/themes/default-bootstrap/img/';
 var instantsearch = false;
 var isGuest = 0;
-var isLogged = 0;
+var isLogged = 1;
 var loggin_required = 'You must be logged in to manage your wishlist.';
+var max_item = 'You cannot add more than 3 product(s) to the product comparison';
+var min_item = 'Please select at least one product';
 var mywishlist_url = 'http://automationpractice.com/index.php?fc=module&module=blockwishlist&controller=mywishlist';
 var page_name = 'index';
 var placeholder_blocknewsletter = 'Enter your e-mail';
@@ -71,8 +75,8 @@ var quickView = true;
 var removingLinkText = 'remove this product from my cart';
 var roundMode = 2;
 var search_url = 'http://automationpractice.com/index.php?controller=search';
-var static_token = 'e817bb0705dd58da8db074c69f729fd8';
-var token = 'ce65cefcbafad255f0866d3b32d32058';
+var static_token = 'd3d3cda8390f4538f75528c02955936b';
+var token = 'e4417b9f3816cd2597dc95a5a942e910';
 var usingSecureMode = false;
 var wishlistProductsIds = false;
 </script>
@@ -134,9 +138,12 @@ var wishlistProductsIds = false;
 						<div class="container">
 							<div class="row">
 								<nav><!-- Block user information module NAV  -->
+	<div class="header_user_info">
+		<a href="http://automationpractice.com/index.php?controller=my-account" title="View my customer account" class="account" rel="nofollow"><span>Mark Li</span></a>
+	</div>
 <div class="header_user_info">
-			<a class="login" href="http://automationpractice.com/index.php?controller=my-account" rel="nofollow" title="Log in to your customer account">
-			Sign in
+			<a class="logout" href="http://automationpractice.com/index.php?mylogout=" rel="nofollow" title="Log me out">
+			Sign out
 		</a>
 	</div>
 <!-- /Block usmodule NAV -->
@@ -426,7 +433,7 @@ var wishlistProductsIds = false;
 							
 											</div>
 										<div class="button-container">
-																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=1&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="1">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=1&amp;token=79a078f0274f97f8aa7d803764e11584" rel="nofollow" title="Add to cart" data-id-product="1">
 										<span>Add to cart</span>
 									</a>
 																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=1&amp;controller=product" title="View">
@@ -489,7 +496,7 @@ var wishlistProductsIds = false;
 							
 											</div>
 										<div class="button-container">
-																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=2&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="2">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=2&amp;token=79a078f0274f97f8aa7d803764e11584" rel="nofollow" title="Add to cart" data-id-product="2">
 										<span>Add to cart</span>
 									</a>
 																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=2&amp;controller=product" title="View">
@@ -552,7 +559,7 @@ var wishlistProductsIds = false;
 							
 											</div>
 										<div class="button-container">
-																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=3&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="3">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=3&amp;token=79a078f0274f97f8aa7d803764e11584" rel="nofollow" title="Add to cart" data-id-product="3">
 										<span>Add to cart</span>
 									</a>
 																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=3&amp;controller=product" title="View">
@@ -615,7 +622,7 @@ var wishlistProductsIds = false;
 							
 											</div>
 										<div class="button-container">
-																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=4&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="4">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=4&amp;token=79a078f0274f97f8aa7d803764e11584" rel="nofollow" title="Add to cart" data-id-product="4">
 										<span>Add to cart</span>
 									</a>
 																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=4&amp;controller=product" title="View">
@@ -689,7 +696,7 @@ var wishlistProductsIds = false;
 							
 											</div>
 										<div class="button-container">
-																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=5&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="5">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=5&amp;token=79a078f0274f97f8aa7d803764e11584" rel="nofollow" title="Add to cart" data-id-product="5">
 										<span>Add to cart</span>
 									</a>
 																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=5&amp;controller=product" title="View">
@@ -753,7 +760,7 @@ var wishlistProductsIds = false;
 							
 											</div>
 										<div class="button-container">
-																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=6&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="6">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=6&amp;token=79a078f0274f97f8aa7d803764e11584" rel="nofollow" title="Add to cart" data-id-product="6">
 										<span>Add to cart</span>
 									</a>
 																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=6&amp;controller=product" title="View">
@@ -827,7 +834,7 @@ var wishlistProductsIds = false;
 							
 											</div>
 										<div class="button-container">
-																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=7&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="7">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=7&amp;token=79a078f0274f97f8aa7d803764e11584" rel="nofollow" title="Add to cart" data-id-product="7">
 										<span>Add to cart</span>
 									</a>
 																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=7&amp;controller=product" title="View">
@@ -914,7 +921,7 @@ var wishlistProductsIds = false;
 							
 											</div>
 										<div class="button-container">
-																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=7&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="7">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=7&amp;token=d3d3cda8390f4538f75528c02955936b" rel="nofollow" title="Add to cart" data-id-product="7">
 										<span>Add to cart</span>
 									</a>
 																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=7&amp;controller=product" title="View">
@@ -978,7 +985,7 @@ var wishlistProductsIds = false;
 							
 											</div>
 										<div class="button-container">
-																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=1&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="1">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=1&amp;token=d3d3cda8390f4538f75528c02955936b" rel="nofollow" title="Add to cart" data-id-product="1">
 										<span>Add to cart</span>
 									</a>
 																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=1&amp;controller=product" title="View">
@@ -1041,7 +1048,7 @@ var wishlistProductsIds = false;
 							
 											</div>
 										<div class="button-container">
-																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=2&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="2">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=2&amp;token=d3d3cda8390f4538f75528c02955936b" rel="nofollow" title="Add to cart" data-id-product="2">
 										<span>Add to cart</span>
 									</a>
 																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=2&amp;controller=product" title="View">
@@ -1115,7 +1122,7 @@ var wishlistProductsIds = false;
 							
 											</div>
 										<div class="button-container">
-																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=5&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="5">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=5&amp;token=d3d3cda8390f4538f75528c02955936b" rel="nofollow" title="Add to cart" data-id-product="5">
 										<span>Add to cart</span>
 									</a>
 																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=5&amp;controller=product" title="View">
@@ -1179,7 +1186,7 @@ var wishlistProductsIds = false;
 							
 											</div>
 										<div class="button-container">
-																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=3&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="3">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=3&amp;token=d3d3cda8390f4538f75528c02955936b" rel="nofollow" title="Add to cart" data-id-product="3">
 										<span>Add to cart</span>
 									</a>
 																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=3&amp;controller=product" title="View">
@@ -1242,7 +1249,7 @@ var wishlistProductsIds = false;
 							
 											</div>
 										<div class="button-container">
-																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=6&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="6">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=6&amp;token=d3d3cda8390f4538f75528c02955936b" rel="nofollow" title="Add to cart" data-id-product="6">
 										<span>Add to cart</span>
 									</a>
 																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=6&amp;controller=product" title="View">
@@ -1305,7 +1312,7 @@ var wishlistProductsIds = false;
 							
 											</div>
 										<div class="button-container">
-																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=4&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="4">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=4&amp;token=d3d3cda8390f4538f75528c02955936b" rel="nofollow" title="Add to cart" data-id-product="4">
 										<span>Add to cart</span>
 									</a>
 																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=4&amp;controller=product" title="View">
@@ -1361,7 +1368,7 @@ var wishlistProductsIds = false;
 <div id="facebook_block" class="col-xs-4">
 	<h4>Follow us on Facebook</h4>
 	<div class="facebook-fanbox">
-		<div class="fb-like-box fb_iframe_widget" data-href="https://www.facebook.com/prestashop" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=334341610034299&amp;color_scheme=light&amp;container_width=254&amp;header=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fprestashop&amp;locale=en_US&amp;sdk=joey&amp;show_border=false&amp;show_faces=true&amp;stream=false"><span style="vertical-align: bottom; width: 0px; height: 0px;"><iframe name="f12b528350c783c" width="1000px" height="1000px" data-testid="fb:like_box Facebook Social Plugin" title="fb:like_box Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/plugins/like_box.php?app_id=334341610034299&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df22721a0ac4bf64%26domain%3Dautomationpractice.com%26origin%3Dhttp%253A%252F%252Fautomationpractice.com%252Ff3fd1350128725%26relation%3Dparent.parent&amp;color_scheme=light&amp;container_width=254&amp;header=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fprestashop&amp;locale=en_US&amp;sdk=joey&amp;show_border=false&amp;show_faces=true&amp;stream=false" style="border: none; visibility: visible; width: 0px; height: 0px;" class=""></iframe></span></div>
+		<div class="fb-like-box fb_iframe_widget" data-href="https://www.facebook.com/prestashop" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false" fb-xfbml-state="parsed" fb-iframe-plugin-query="app_id=334341610034299&amp;color_scheme=light&amp;container_width=254&amp;header=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fprestashop&amp;locale=en_US&amp;sdk=joey&amp;show_border=false&amp;show_faces=true&amp;stream=false"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f3bdf41160cfd" width="1000px" height="1000px" data-testid="fb:like_box Facebook Social Plugin" title="fb:like_box Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/plugins/like_box.php?app_id=334341610034299&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df21aa9c03439a4c%26domain%3Dautomationpractice.com%26origin%3Dhttp%253A%252F%252Fautomationpractice.com%252Ff3f2fe5ddf4f8bc%26relation%3Dparent.parent&amp;color_scheme=light&amp;container_width=254&amp;header=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fprestashop&amp;locale=en_US&amp;sdk=joey&amp;show_border=false&amp;show_faces=true&amp;stream=false" style="border: none; visibility: hidden;"></iframe></span></div>
 	</div>
 </div>
 <!-- MODULE Block cmsinfo -->
@@ -1588,7 +1595,7 @@ var wishlistProductsIds = false;
 			<li><a href="http://automationpractice.com/index.php?controller=addresses" title="My addresses" rel="nofollow">My addresses</a></li>
 			<li><a href="http://automationpractice.com/index.php?controller=identity" title="Manage my personal information" rel="nofollow">My personal info</a></li>
 						
-            		</ul>
+            <li><a href="http://automationpractice.com/index.php?mylogout" title="Sign out" rel="nofollow">Sign out</a></li>		</ul>
 	</div>
 </section>
 <!-- /Block myaccount module -->

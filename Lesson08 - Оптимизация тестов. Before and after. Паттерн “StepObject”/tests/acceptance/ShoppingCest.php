@@ -13,40 +13,25 @@ class ShoppingCest{
      * Проверка общей суммы заказа  
      * @group test5
      */
-    public function checkTotalAmount(\AcceptanceTester $I){
+    public function checkTotalAmount(\Step\Acceptance\ShoppingStep $I){
         $productsPage = new ProductsPage($I);
         $I->amOnPage(ProductsPage::$dressesUrl);
         $productsPage->checkFirstCards();
-        
         $I->comment('Добавляю товары в корзину');
+        $I->addProductToCard();
 
-        for($i = 1; $i<=self::PRODUCTS_NMB; $i++){
-            $I->moveMouseOver(sprintf(ProductsPage::$addToCartButton, $i));
-            //$I->wait(10);
-            $I->click(sprintf(ProductsPage::$addToCartButton, $i));
-            //$I->wait(10);
-            $I->waitForElementVisible(ProductsPage::$addSuccessModal);
-            //$I->wait(10);
-            //$I->waitForText(ProductsPage::$successMessage);
-            $I->wait(10);
-            $I->click(ProductsPage::$goBackShoppingButton);
-        }
-        $I->click(ProductsPage::$cartListButton);    
-        $I->seeInCurrentUrl(ShoppingListPage::$ordersUrl);
-
-        for($i = 1; $i<=self::PRODUCTS_NMB; $i++){
-            $I->waitForElementNotVisible(ShoppingListPage::getOrderSelectorByIndex($i));
-        }
-
-        $sum = 0;
-        $totalSum = preq_replace('/[$]/','',$I->grabTextFrom(ShoppingListPage::$totalSum));
-        
-        for($i = 1; $i<=self::PRODUCTS_NMB; $i++){
-            $price = preq_replace('/[$]/','',$I->grabTextFrom(ShoppingListPage::getOrderPriceByIndex($i)));
-            $sum += $price;
-        }
-
+        $totalSum = preg_replace('/[$]/','',$I->grabTextFrom(ShoppingListPage::$totalSum));
+        $sum = $this->getSumOfPrices($I);
         $I->assertEquals($totalSum, $sum, 'Checks that total sum is correct');
 
+    }
+    protected function getSumOfPrices(\AcceptanceTester $I){
+        $sum = 0;
+
+        for($i = 1; $i<= self::PRODUCTS_NMB; $i++){
+            $price = preg_replace('/[$]/','',$I->grabTextFrom(ShoppingListPage::getOrderPriceByIndex($i)));
+            $sum += $price;
+        }
+        return $sum;
     }
 }
