@@ -38,8 +38,20 @@ class UsersCest
         $I->seeResponseContainsJson(['status' => 'ok']);
         $I->sendGET('people',  $userData);
         $I->seeResponseMatchesJsonType(self::$defaultSchema);
+        $userId = implode($I->grabDataFromResponseByJsonPath('$._id'));
 
-        $I->sendPut('human?_id=', ['name' => $updatedName = $I->getFaker()->name.'updated']);
+        $I->sendPut('human', ['name' => $updatedName = $I->getFaker()->name]);
+        $I->sendGET('people',  [$updatedName]);
+        $I->seeResponseCodeIsSuccessful();
+        $I->sendDelete('human'.$userId);
+        $I->seeResponseCodeIsSuccessful();
+
+
+
+
+
+
+
 
     }
 
