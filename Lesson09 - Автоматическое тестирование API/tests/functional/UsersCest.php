@@ -40,6 +40,7 @@ class UsersCest
         $I->seeResponseMatchesJsonType(self::$defaultSchema);
 
         $I->sendPut('human?_id=', ['name' => $updatedName = $I->getFaker()->name.'updated']);
+        $I->seeResponseCodeIsSuccessful();
 
     }
 

@@ -36,10 +36,11 @@ class UsersCest
         $I->sendPOST('human', $userData);
         $I->seeResponseCodeIsSuccessful();
         $I->seeResponseContainsJson(['status' => 'ok']);
-        $I->sendGET('people',  $userData);
+        //$I->sendGET('people',  $userData);
+        $I->seeInCollection('people', $this->data);
         $I->seeResponseMatchesJsonType(self::$defaultSchema);
 
-        $I->sendPut('human?_id=', ['name' => $updatedName = $I->getFaker()->name.'updated']);
+        //$I->sendPut('human?_id=', ['name' => $updatedName = $I->getFaker()->name.'updated']);
 
     }
 
