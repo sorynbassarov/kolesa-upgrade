@@ -15,6 +15,11 @@ jobs:
         run: composer require fzaninotto/Faker
       - name: run Chromedriver
         run: nohup $CHROMEWEBDRIVER/chromedriver --url-base=/wd/hub /dev/null 2>&1 &
-      - name: run test cases
+      - name: Run tests
         run: php vendor/bin/codecept run --steps -vvv --xml
+      - name: Publish Test Report
+        if: always()
+        uses: mikepenz/action-junit-report@v2
+        with:
+          report_paths: 'tests/_output/report.xml'
     
