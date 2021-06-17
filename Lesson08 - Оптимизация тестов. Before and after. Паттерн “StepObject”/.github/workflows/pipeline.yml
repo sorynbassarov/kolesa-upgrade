@@ -1,7 +1,7 @@
 name: Workflow
 on: [push]
 
-job: 
+jobs: 
   buildAndTest: 
     runs-on: ubuntu-latest
     steps: 
